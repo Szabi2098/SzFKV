@@ -41,14 +41,14 @@ namespace SzFKV.Controllers
             return adat;
         }
 
-        public void Beszur(int hely, string nev, int elso, int msdk, int hrmdk)
+        public void Beszur(int hely, string nev, float elso, float msdk, float hrmdk)
         {
             MySqlConnection connection = new MySqlConnection();
             string connectionString = "server=localhost;database=szfkv;uid=root;pwd=;";
             connection.ConnectionString = connectionString;
 
             connection.Open();
-            string insertSql = "INSERT INTO `szfkv` VALUES (@hely,@nev,@elsoLeng,@masoLeng,@harmLeng,null)";
+            string insertSql = "INSERT INTO `szfkv` VALUES (@hely,@nev,@elsoLeng,@masoLeng,@harmLeng,null,null)";
             MySqlCommand insertcmd = new MySqlCommand(insertSql, connection);
             insertcmd.Parameters.AddWithValue("@hely", hely);
             insertcmd.Parameters.AddWithValue("@nev", nev);
@@ -68,7 +68,7 @@ namespace SzFKV.Controllers
             connection.ConnectionString = connectionString;
 
             connection.Open();
-            string sql = "UPDATE szfkv v JOIN( SELECT hely, ROW_NUMBER() OVER(ORDER BY legjob DESC) AS new_rank FROM szfkv ) ranked ON v.hely = ranked.hely SET v.hely = ranked.new_rank;";
+            string sql = "ALTER TABLE szfkv ADD COLUMN temp_rank INT; UPDATE szfkv v JOIN (SELECT hely, ROW_NUMBER() OVER (ORDER BY legjob ASC) AS new_rank FROM szfkv) ranked ON v.hely = ranked.hely SET v.temp_rank = ranked.new_rank; UPDATE szfkv SET hely = temp_rank; ALTER TABLE szfkv DROP COLUMN temp_rank;\r\n";
             MySqlCommand cmd = new MySqlCommand(sql, connection);
             cmd.ExecuteNonQuery();
             connection.Close();

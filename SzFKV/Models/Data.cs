@@ -9,7 +9,7 @@ namespace SzFKV.Models
 {
     internal class Data
     {
-        public Data(int hely, string nev, int elsoLeng, int masoLeng, int harmLeng, int legjob)
+        public Data(int hely, string nev, float elsoLeng, float masoLeng, float harmLeng, int legjob)
         {
             Hely = hely;
             Nev = nev;
@@ -21,9 +21,9 @@ namespace SzFKV.Models
 
         public int Hely { get; set; }
         public string Nev { get; set; }
-        public int ElsoLeng { get; set; }
-        public int MasoLeng { get; set; }
-        public int HarmLeng { get; set; }
+        public float ElsoLeng { get; set; }
+        public float MasoLeng { get; set; }
+        public float HarmLeng { get; set; }
         public int Legjob { get; set; }
     }
 }

@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\SQLController.cs" />
+    <Compile Include="Models\CenterEngine.cs" />
     <Compile Include="Models\Data.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
