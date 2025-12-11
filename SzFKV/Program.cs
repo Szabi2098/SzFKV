@@ -136,7 +136,68 @@ namespace SzFKV
             }
         }
 
-        
+        static void HTML()
+        {
+            List<Data> adat = new SQLController().Kiir();
+
+            string filePath = @"D:\VS\SzFKV\SzFKV.html";
+
+            var html = @"
+<!DOCTYPE html>
+<html lang='hu'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Szélesbálási Kalaplengető Verseny</title>
+        <style>
+            table { margin-left: auto; margin-right: auto; }
+            body { background-image: url(bg.png); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
+            thead { background: rgba(255, 255, 255, 0.4); color: rgb(0,0,0); }
+            tbody { background: rgba(255,217,0,0.4); color: rgb(0,0,0); }
+        </style>
+    </head>
+    <body>
+        <div style='text-align: center;'>
+            <div style='text-align: center; display: flex; justify-content: center; align-items: center; gap: 20px; margin-bottom: 20px;'>
+                <img src='traktoros_cimer_buzakalasszal.png' alt='Left' style='height: 80px;'>
+                <h1>Szélesbálási Fedettpályás Kalaplengető Verseny</h1>
+            <img src='traktoros_cimer_buzakalasszal.png' alt='Right' style='height: 80px;'>
+            </div>
+        <h3>Pontszám:</h3>
+        <table border='1' cellspacing='0' cellpadding='6'>
+            <thead>
+                <tr>
+                    <th>Pillanatnyi helyezés</th>
+                    <th>Versenyző neve</th>
+                    <th>Első lengetés pontszáma</th>
+                    <th>Második lengetés pontszáma</th>
+                    <th>Harmadik lengetés pontszáma</th>
+                    <th>Legjobb pontszám</th>
+                </tr>
+            </thead>
+            <tbody>";
+
+            foreach (var user in adat)
+            {
+                html += $@"
+                <tr>
+                    <td>{user.Hely}</td>
+                    <td>{user.Nev}</td>
+                    <td>{user.ElsoLeng}</td>
+                    <td>{user.MasoLeng}</td>
+                    <td>{user.HarmLeng}</td>
+                    <td>{user.Legjob}</td>
+                </tr>";
+            }
+
+            html += @"
+            </tbody>
+        </table>
+        </div>
+    </body>
+</html>";
+
+            File.WriteAllText(filePath, html);
+        }
     }
 }
 
