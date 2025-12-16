@@ -89,6 +89,7 @@ namespace SzFKV
 
             new SQLController().Beszur(hely, nev, elso, masodik, harmadik);
             new SQLController().UpdSorrend();
+            HTML();
 
             CenterEngine.Show(
                 "1: Új eredmény",
