@@ -5,6 +5,7 @@ using MySqlX.XDevAPI.Relational;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Net.Mail;
 using System.Runtime.InteropServices;
@@ -12,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SzFKV.Controllers;
 using SzFKV.Models;
-using System.IO;
+using static System.Net.Mime.MediaTypeNames;
 
 
 namespace SzFKV
@@ -150,7 +151,7 @@ namespace SzFKV
         <title>Szélesbálási Kalaplengető Verseny</title>
         <style>
             table { margin-left: auto; margin-right: auto; }
-            body { background-image: url(bg.png); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
+            body { background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(bg.png); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
             thead { background: rgba(255, 255, 255, 0.4); color: rgb(0,0,0); }
             tbody { background: rgba(255,217,0,0.4); color: rgb(0,0,0); }
         </style>

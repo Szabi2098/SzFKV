@@ -68,7 +68,7 @@ namespace SzFKV.Controllers
             connection.ConnectionString = connectionString;
 
             connection.Open();
-            string sql = "ALTER TABLE szfkv ADD COLUMN temp_rank INT; UPDATE szfkv v JOIN (SELECT hely, ROW_NUMBER() OVER (ORDER BY legjob ASC) AS new_rank FROM szfkv) ranked ON v.hely = ranked.hely SET v.temp_rank = ranked.new_rank; UPDATE szfkv SET hely = temp_rank; ALTER TABLE szfkv DROP COLUMN temp_rank;\r\n";
+            string sql = "ALTER TABLE szfkv ADD COLUMN temp_rank INT; UPDATE szfkv v JOIN (SELECT hely, ROW_NUMBER() OVER (ORDER BY legjob DESC) AS new_rank FROM szfkv) ranked ON v.hely = ranked.hely SET v.temp_rank = ranked.new_rank; UPDATE szfkv SET hely = temp_rank; ALTER TABLE szfkv DROP COLUMN temp_rank;\r\n";
             MySqlCommand cmd = new MySqlCommand(sql, connection);
             cmd.ExecuteNonQuery();
             connection.Close();
