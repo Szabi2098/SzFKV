@@ -155,7 +155,7 @@ namespace SzFKV
             table { margin-left: auto; margin-right: auto; }
             body { background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(bg.png); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
             thead { background: rgba(255, 255, 255, 0.4); color: rgb(0,0,0); }
-            tbody { background: rgba(124, 124, 124, 0.4); color: rgb(0,0,0); }
+            tbody { background: rgba(124, 124, 124, 0.4); color: rgb(255, 255, 255); }
         </style>
     </head>
     <body>
