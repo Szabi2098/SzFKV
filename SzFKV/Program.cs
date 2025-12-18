@@ -142,19 +142,20 @@ namespace SzFKV
         {
             List<Data> adat = new SQLController().Kiir();
 
-            string filePath = @"D:\VS\SzFKV\SzFKV.html";
+            string filePath = @"C:\Users\nagysz\Desktop\Nagysz\csarp\SzFKV\SzFKV.html";
 
             var html = @"
 <!DOCTYPE html>
 <html lang='hu'>
     <head>
+        <meta http-equiv=""refresh"" content=""90"">
         <meta charset='UTF-8'>
         <title>Szélesbálási Kalaplengető Verseny</title>
         <style>
             table { margin-left: auto; margin-right: auto; }
-            body { background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(bg.png); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
+            body { background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(bg.png); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
             thead { background: rgba(255, 255, 255, 0.4); color: rgb(0,0,0); }
-            tbody { background: rgba(255,217,0,0.4); color: rgb(0,0,0); }
+            tbody { background: rgba(124, 124, 124, 0.4); color: rgb(0,0,0); }
         </style>
     </head>
     <body>

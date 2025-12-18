@@ -29,9 +29,9 @@ namespace SzFKV.Controllers
                 Data d = new Data(
                     hely: reader.GetInt32("hely"),
                     nev: reader.GetString("nev"),
-                    elsoLeng: reader.GetInt32("elsoLeng"),
-                    masoLeng: reader.GetInt32("masoLeng"),
-                    harmLeng: reader.GetInt32("harmLeng"),
+                    elsoLeng: 10f - (float)Math.Round(reader.GetFloat("elsoLeng"), 0),
+                    masoLeng: 10f - (float)Math.Round(reader.GetFloat("masoLeng"), 0),
+                    harmLeng: 10f - (float)Math.Round(reader.GetFloat("harmLeng"), 0),
                     legjob: reader.GetInt32("legjob")
                 );
                 adat.Add(d);
