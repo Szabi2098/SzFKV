@@ -89,7 +89,7 @@ namespace SzFKV
 
             new SQLController().Beszur(hely, nev, elso, masodik, harmadik);
             new SQLController().UpdSorrend();
-            HTML();
+            HTMLupd();
 
             CenterEngine.Show(
                 "1: Új eredmény",
@@ -129,7 +129,7 @@ namespace SzFKV
             if (ans == "1")
             {
                 new SQLController().UpdSorrend();
-                HTML();
+                HTMLupd();
                 Eredmenyek();
             }
             else
@@ -138,7 +138,7 @@ namespace SzFKV
             }
         }
 
-        static void HTML()
+        static void HTMLupd()
         {
             List<Data> adat = new SQLController().Kiir();
 
