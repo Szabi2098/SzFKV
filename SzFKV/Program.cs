@@ -148,7 +148,7 @@ namespace SzFKV
 <!DOCTYPE html>
 <html lang='hu'>
     <head>
-        <meta http-equiv=""refresh"" content=""30"">
+        <meta http-equiv=""refresh"" content=""10"">
         <meta charset='UTF-8'>
         <title>Szélesbálási Kalaplengető Verseny</title>
         <style>
