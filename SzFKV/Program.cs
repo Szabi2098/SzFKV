@@ -26,7 +26,7 @@ namespace SzFKV
 
             CenterEngine.Show(
                 "Szélesbálási Fedettpályás Kalaplengető Verseny",
-                "",
+                "----------------------------------------------------",
                 "1: Eredmények",
                 "2: Új eredmény",
                 "3: Kilépés"
@@ -148,7 +148,7 @@ namespace SzFKV
 <!DOCTYPE html>
 <html lang='hu'>
     <head>
-        <meta http-equiv=""refresh"" content=""90"">
+        <meta http-equiv=""refresh"" content=""30"">
         <meta charset='UTF-8'>
         <title>Szélesbálási Kalaplengető Verseny</title>
         <style>
